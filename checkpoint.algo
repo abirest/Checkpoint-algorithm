@@ -1,25 +1,22 @@
-ALGORITHM SENTENCE
+ALGORITHM checkpint6
 VAR
-    nbc,nbw,nbv:= INTEGER;
-    SENTENCE:= STRING;
+    s:= STRING;
+    n,v:= INTEGER:=0;
+    w:INTEGER:=1;
 BEGIN
-    nbc:=0;
-    nbw:=1;
-    nbv:= 0;
-    WRITE(SENTENCE)
-    READ(SENTENCE)
+    READ(s);
 REPEAT
-    IF (SENTENCE[nbc=" "]) THEN
-    nbw:=nbw+1;
+    IF (s[n]=" ") THEN
+    w:=w+1;
     END_IF
-    IF (SENTENCE[nbc] in ["a","e","u","i","o","y"]) THEN
-        nbv:= nbv+1;
+    IF (s[n] in ["a","e","u","i","o","y"]) THEN
+        v:= v+1;
     END_IF
-    nbc:= nbc+1;
-UNTIL (SENTENCE[nbc]=".")
+    n:= n+1;
+UNTIL (s[n]=".")
 
-WRITE("The number of characters is",nbc+1)
-WRITE("The number of words in the sentence is",nbw)
-WRITE("The number of vowels is",nbv)
+WRITE("The number of characters is",n+1)
+WRITE("The number of words in the sentence is",w)
+WRITE("The number of vowels is",v)
 
 END
